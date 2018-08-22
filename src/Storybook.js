@@ -16,13 +16,11 @@ import Edit from './Edit';
 import Upload from './Upload';
 import Blog from './Blog';
 
+
 //樣式設定
 const styles = theme => ({
   layout: {
-    width: 'auto',
-    marginLeft: theme.spacing.unit * 6,
-    marginRight: theme.spacing.unit * 6,
-    width: 1000,
+    width: 1300,
     marginLeft: 'auto',
     marginRight: 'auto',
     
@@ -59,9 +57,9 @@ const steps = ['基本資訊', '選擇成員', '選擇照片','照片匯集','�
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <Edit/>;
+      return <Info/>;
     case 1:
-      return <Blog/>;
+      return ;
     case 2:
       return <Upload/>;
     case 3:
@@ -129,11 +127,7 @@ class Storybook extends React.Component {
               {activeStep === steps.length ? (
                 <React.Fragment>
                   <Typography variant="headline" gutterBottom>
-                    Thank you for your order.
-                  </Typography>
-                  <Typography variant="subheading">
-                    Your order number is #2001539. We have emailed your oder confirmation, and will
-                    send you an update when your order has shipped.
+                    完成
                   </Typography>
                 </React.Fragment>
               ) : (

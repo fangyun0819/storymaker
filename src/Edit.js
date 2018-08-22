@@ -1,110 +1,88 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import { mailFolderListItems} from './tileData';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import IconButton from '@material-ui/core/IconButton';
+import UndoIcon from '@material-ui/icons/Undo';
+import RedoIcon from '@material-ui/icons/Redo';
 
-const styles = {
-  list: {
-    width: 250,
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
   },
-  fullList: {
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
+    height: 450,
+  },
+  card: {
+    display: 'flex',
+    height: 450,
     width: 'auto',
   },
-};
+  button: {
+    margin: theme.spacing.unit,
+  },
 
-class TemporaryDrawer extends React.Component {
-  state = {
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  };
+  
 
-  toggleDrawer = (side, open) => () => {
-    this.setState({
-      [side]: open,
-    });
-  };
+});
 
-  render() {
-    const { classes } = this.props;
+function CenteredGrid(props) {
+  const { classes } = props;
 
-    const sideList = (
-      <div className={classes.list}>
-        <List>{mailFolderListItems}</List>
-        <Divider />
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={24}>
+        <Grid item xs={4}>
+          <Button variant="contained" size="small" className={classes.button}>
+          貼圖</Button>
+          <Button variant="contained" size="small" className={classes.button}>
+          文字</Button>
+          <IconButton className={classes.button} aria-label="Delete">
+          <UndoIcon/>
+          </IconButton>
+          <IconButton className={classes.button} aria-label="Delete">
+          <RedoIcon/>
+          </IconButton>
+          <Button variant="outlined" color="primary" className={classes.button}>
+        預覽
+        </Button>
+        </Grid>
+        <Grid item xs={8}>
+        <Card></Card>
+        </Grid>
+      <Grid item xs>
+          <Paper className={classes.paper}>
+          <Button variant="contained" size="small" className={classes.button}>
+          頁面管理</Button></Paper>
+          
+        </Grid>
+
+      <Grid item xs={9}>
+        <Card className={classes.card} >
+        </Card>
+      </Grid>
+
        
-      </div>
-    );
-
-    const fullList = (
-      <div className={classes.fullList}>
-        <List>{mailFolderListItems}</List>
-        <Divider />
-      </div>
-    );
-
-    return (
-      <div>
-        <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
-        <Button onClick={this.toggleDrawer('right', true)}>Open Right</Button>
-        <Button onClick={this.toggleDrawer('top', true)}>Open Top</Button>
-        <Button onClick={this.toggleDrawer('bottom', true)}>Open Bottom</Button>
-        <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('left', false)}
-            onKeyDown={this.toggleDrawer('left', false)}
-          >
-            {sideList}
-          </div>
-        </Drawer>
-        <Drawer anchor="top" open={this.state.top} onClose={this.toggleDrawer('top', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('top', false)}
-            onKeyDown={this.toggleDrawer('top', false)}
-          >
-            {fullList}
-          </div>
-        </Drawer>
-        <Drawer
-          anchor="bottom"
-          open={this.state.bottom}
-          onClose={this.toggleDrawer('bottom', false)}
-        >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('bottom', false)}
-            onKeyDown={this.toggleDrawer('bottom', false)}
-          >
-            {fullList}
-          </div>
-        </Drawer>
-        <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('right', false)}
-            onKeyDown={this.toggleDrawer('right', false)}
-          >
-            {sideList}
-          </div>
-        </Drawer>
-      </div>
-    );
-  }
+        <Grid item xs>
+          <Paper className={classes.paper}>
+          <Button variant="contained" size="small" className={classes.button}>
+          版型選擇</Button></Paper>
+        </Grid>
+        
+      </Grid>
+    </div>
+  );
 }
 
-TemporaryDrawer.propTypes = {
+CenteredGrid.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TemporaryDrawer);
+export default withStyles(styles)(CenteredGrid);
