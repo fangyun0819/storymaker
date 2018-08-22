@@ -6,6 +6,12 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+
+
+
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
@@ -19,23 +25,33 @@ function PaperSheet(props) {
 
   return (
     <div>
+      <React.Fragment>
       <Paper className={classes.root} elevation={1}>
-         <Grid container>
-         <Grid item xs={100} md={6}>
+         <Grid container xs={24}>
+         <Grid item xs={6} sm={3}>
          <Typography variant="headline" component="h3">
-          This is a sheet of paper.
+          主題選擇
         </Typography>
         </Grid>
-
-         <Grid item xs={100} md={6}>
-        <Typography component="p">
-          Paper can be used to build surface or other elements for your application.
-        </Typography>
-        <Button variant="contained" size="small" className={classes.button}>下一步</Button>
         </Grid>
+      <Grid item container xs={24}>
+        <Grid item xs={6} sm={3}>
+        <Card className={classes.card}>
+         <CardContent>
+          <Typography className={classes.title} color="textSecondary">
+          畢業模板
+          </Typography>
+        </CardContent>
+        <CardActions>
+         <Button variant="contained" size="small" className={classes.button}>
+         畢業風</Button>
+        </CardActions>
+        </Card>
+        
         </Grid>
+      </Grid>
       </Paper>
-     
+    </React.Fragment>
     
     </div>
   );

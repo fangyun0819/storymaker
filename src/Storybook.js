@@ -59,7 +59,7 @@ const steps = ['基本資訊', '選擇成員', '選擇照片','照片匯集','�
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <Edit/>;
+      return <Info/>;
     case 1:
       return <Blog/>;
     case 2:
