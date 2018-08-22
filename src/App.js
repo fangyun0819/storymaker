@@ -1,7 +1,7 @@
 import React ,{Fragment} from 'react'
-import {Header,Footer} from './Layouts'
-import Exercises from './Exercises'
-
+import Header from './Header';
+import Footer from './Footer';
+import Storybook from './Storybook'
 class App extends React.Component {
  
   render(){
@@ -10,7 +10,7 @@ class App extends React.Component {
    
     
 
-    <Footer/>
+    <Storybook/>
  
   </Fragment>
   }
