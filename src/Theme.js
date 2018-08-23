@@ -18,6 +18,12 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
   },
+
+  card: {
+    display: 'flex',
+    height: 200,
+    width: 200,
+  },
 });
 
 function PaperSheet(props) {
@@ -38,14 +44,12 @@ function PaperSheet(props) {
         <Grid item xs={6} sm={3}>
         <Card className={classes.card}>
          <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-          畢業模板
-          </Typography>
-        </CardContent>
-        <CardActions>
+
          <Button variant="contained" size="small" className={classes.button}>
          畢業風</Button>
-        </CardActions>
+        </CardContent>
+        
+
         </Card>
         
         </Grid>
