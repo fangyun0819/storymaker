@@ -14,15 +14,21 @@ import Info from './Info';
 import Theme from './Theme';
 import Edit from './Edit';
 import Upload from './Upload';
-import Blog from './Blog';
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
 
+
+>>>>>>> 0c428bc3b240ec4af013ce947b9993d0d8902e34
+
+
+
+>>>>>>> 0c428bc3b240ec4af013ce947b9993d0d8902e34
 //樣式設定
 const styles = theme => ({
   layout: {
-    width: 'auto',
-    marginLeft: theme.spacing.unit * 6,
-    marginRight: theme.spacing.unit * 6,
-    width: 1000,
+    width: 1300,
     marginLeft: 'auto',
     marginRight: 'auto',
     
@@ -61,7 +67,7 @@ function getStepContent(step) {
     case 0:
       return <Info/>;
     case 1:
-      return <Blog/>;
+      return ;
     case 2:
       return <Upload/>;
     case 3:
@@ -113,10 +119,6 @@ class Storybook extends React.Component {
         <main className={classes.layout}>
           <Paper className={classes.paper}>
             
-            <Typography variant="display1" align="center">
-              STORY BOOK
-            </Typography>
-
             <Stepper activeStep={activeStep} className={classes.stepper}>
               {steps.map(label => (
                 <Step key={label}>
@@ -129,11 +131,8 @@ class Storybook extends React.Component {
               {activeStep === steps.length ? (
                 <React.Fragment>
                   <Typography variant="headline" gutterBottom>
-                    Thank you for your order.
-                  </Typography>
-                  <Typography variant="subheading">
-                    Your order number is #2001539. We have emailed your oder confirmation, and will
-                    send you an update when your order has shipped.
+                  <Button variant="contained" size="small" className={classes.button}>
+                  回到主頁面</Button>
                   </Typography>
                 </React.Fragment>
               ) : (
