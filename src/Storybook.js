@@ -14,7 +14,7 @@ import Info from './Info';
 import Theme from './Theme';
 import Edit from './Edit';
 import Upload from './Upload';
-
+import Template from './component/Template';
 
 
 //樣式設定

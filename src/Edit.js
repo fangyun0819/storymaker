@@ -10,12 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import Template from './component/Template';
+import Editbar from './component/Editbar';
 
 const styles = theme => ({
   root: {
@@ -45,68 +41,19 @@ class CenteredGrid extends React.Component {
     expanded: null,
   };
 
-  handleChange = panel => (event, expanded) => {
-    this.setState({
-      expanded: expanded ? panel : false,
-    });
-  };
-
   render() {
     const { classes } = this.props;
-    const { expanded } = this.state;
-
+    
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
-        
-      <Grid item xs={2}>
-          <div className={classes.root}>
-        <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>頁面管理</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              放頁面管理的東西
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>版型選擇</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-             放版型選擇的東西
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>文字</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-             放文字的東西
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>貼圖</Typography>
-          </ExpansionPanelSummary>
-         <ExpansionPanelDetails>
-            <Typography>
-             放貼圖的東西
-            </Typography>
-         </ExpansionPanelDetails>
-        </ExpansionPanel>
-       </div>
-          
+       
+       <Grid item xs={2}>
+       <Editbar/>
       </Grid>
+    
       <Grid item xs>
-        <Grid item xs={12}>
-          
+        <Grid item xs>
           <IconButton className={classes.button} aria-label="Delete">
           <UndoIcon/>
           </IconButton>
@@ -116,24 +63,21 @@ class CenteredGrid extends React.Component {
           <Button variant="outlined" color="primary" className={classes.button}>
           預覽
           </Button>
-          
-          </Grid>
-
-          <Grid item xs>
-          <Paper className={classes.paper}>
-          編輯頁面
-          </Paper>
-          <Grid item xs>
-          照片區
-          </Grid>
-          
-        
-      </Grid>
-          
-        
-        
         </Grid>
-      </Grid>
+
+        <Grid container spacing={24}>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+          <Template/>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+          編輯頁面</Paper>
+        </Grid>
+        </Grid>
+       </Grid>
+     </Grid>
     </div>
   );
 }
