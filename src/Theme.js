@@ -44,12 +44,12 @@ function PaperSheet(props) {
         <Grid item xs={6} sm={3}>
         <Card className={classes.card}>
          <CardContent>
+
          <Button variant="contained" size="small" className={classes.button}>
          畢業風</Button>
         </CardContent>
         
-        
-        
+
         </Card>
         
         </Grid>
