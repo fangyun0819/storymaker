@@ -16,8 +16,13 @@ import Edit from './Edit';
 import Upload from './Upload';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+
+
+>>>>>>> 0c428bc3b240ec4af013ce947b9993d0d8902e34
 
 
 >>>>>>> 0c428bc3b240ec4af013ce947b9993d0d8902e34
