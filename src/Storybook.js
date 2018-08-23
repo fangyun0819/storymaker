@@ -14,7 +14,7 @@ import Info from './Info';
 import Theme from './Theme';
 import Edit from './Edit';
 import Upload from './Upload';
-import Blog from './Blog';
+
 
 
 //樣式設定
@@ -111,10 +111,6 @@ class Storybook extends React.Component {
         <main className={classes.layout}>
           <Paper className={classes.paper}>
             
-            <Typography variant="display1" align="center">
-              STORY BOOK
-            </Typography>
-
             <Stepper activeStep={activeStep} className={classes.stepper}>
               {steps.map(label => (
                 <Step key={label}>
@@ -127,7 +123,8 @@ class Storybook extends React.Component {
               {activeStep === steps.length ? (
                 <React.Fragment>
                   <Typography variant="headline" gutterBottom>
-                    完成
+                  <Button variant="contained" size="small" className={classes.button}>
+                  回到主頁面</Button>
                   </Typography>
                 </React.Fragment>
               ) : (
