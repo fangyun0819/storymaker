@@ -29,7 +29,7 @@ function ContainedButtons(props) {
         
       />
       <label htmlFor="contained-button-file">
-        <Button  variant="contained" component="span" className={classes.button}>
+      <Button variant="outlined" component="span" className={classes.button}>
           上傳照片
         </Button>
       </label>

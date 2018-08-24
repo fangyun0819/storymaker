@@ -68,7 +68,7 @@ class CenteredGrid extends React.Component {
         <Grid container spacing={24}>
         <Grid item xs={12} sm={6}>
           <Paper className={classes.paper}>
-          <Template/>
+          
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
