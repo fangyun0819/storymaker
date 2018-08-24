@@ -34,11 +34,6 @@ const styles = theme => ({
   },
 });
 
-function Transition(props) {
-  return <Slide direction="up" {...props} />;
-}
-
-
 class EditList extends React.Component {
   state = {
     open: false,
@@ -66,21 +61,14 @@ class EditList extends React.Component {
           <Button onClick={this.handleClickOpen} variant="outlined" color="primary" className={classes.button}>
           畢業紀念冊1
           </Button>
-          
           <Dialog
-            fullScreen
-            open={this.state.open}
-            onClose={this.handleClose}
-            TransitionComponent={Transition}
+           fullWidth
+           open={this.state.open}
+           onClose={this.handleClose}
           >
           <DialogTitle>{"畢業紀念冊1"}</DialogTitle>
           <DialogContent>
-          <Grid container spacing={24}>
-            <Grid item xs={12} sm={6}>
-            <Paper className={classes.paper}>
-            編輯頁面</Paper>
-            </Grid>
-          </Grid>
+          
 
           </DialogContent>
           <DialogActions>
