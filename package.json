@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^1.5.0",
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/lab": "^1.0.0-alpha.11",
     "prop-types": "^15.6.2",
     "ra-data-json-server": "^2.2.0",
     "ra-data-simple-rest": "^2.2.0",
@@ -12,7 +13,9 @@
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4",
     "react-swipeable-views": "^0.12.16",
-    "react-swipeable-views-native": "^0.12.9"
+    "react-swipeable-views-native": "^0.12.9",
+    "save": "^2.3.2",
+    "semantic-ui-react": "^0.82.3"
   },
   "scripts": {
     "start": "react-scripts start",

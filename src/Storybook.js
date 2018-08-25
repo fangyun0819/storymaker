@@ -12,15 +12,13 @@ import Typography from '@material-ui/core/Typography';
 
 import Info from './Info';
 import Theme from './Theme';
-import Edit from './Edit';
+import EditList from './EditList';
 import Upload from './Upload';
-import Template from './component/Template';
-
 
 //樣式設定
 const styles = theme => ({
   layout: {
-    width: 1300,
+    width: 1000,
     marginLeft: 'auto',
     marginRight: 'auto',
     
@@ -50,7 +48,7 @@ const styles = theme => ({
 
 
 
-const steps = ['基本資訊', '選擇成員', '選擇照片','照片匯集','主題選擇','編輯頁面'];
+const steps = ['基本資訊', '選擇成員', '選擇照片','照片匯集','主題選擇','編輯列表'];
 
 
 //步驟設定
@@ -67,7 +65,7 @@ function getStepContent(step) {
     case 4:
       return <Theme/>;
     case 5:
-      return <Edit/>;
+      return <EditList/>;
     default:
       throw new Error('Unknown step');
   }
